@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tremembé Big Valley | Flag Football Feminino</title>
+  
+  <!-- Fontes Oficiais: Bebas Neue (Títulos) e Montserrat (Corpo, Textos, Detalhes e Pesos Extremos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==============================================
+       HEADER MINIMALISTA - TREMEMBÉ BIG VALLEY
+       ============================================== -->
+  <header class="site-header">
+    <div class="header-container">
+      
+      <!-- 1. Logotipo: Símbolo Oficial do Carcará (Dourado #D4A017) -->
+      <a href="#" class="header-brand" aria-label="Big Valley Flag Football Feminino">
+        <img src="assets/carcara-dourado.png" alt="Símbolo Carcará Tremembé Big Valley" class="brand-logo">
+      </a>
+
+      <!-- Botão Hambúrguer Mobile -->
+      <button class="mobile-toggle" aria-label="Abrir Menu" id="mobileToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- 2. Menu Central: Textos em Maiúsculas com Tipografia Fina -->
+      <nav class="header-nav" id="headerNav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#historia" class="nav-link">NOSSA HISTÓRIA</a>
+          </li>
+          <li class="nav-separator" aria-hidden="true">|</li>
+          <li class="nav-item nav-item-tooltip">
+            <a href="#equipe" class="nav-link">EQUIPE</a>
+            <span class="nav-tooltip" role="tooltip">Em breve</span>
+          </li>
+          <li class="nav-separator" aria-hidden="true">|</li>
+          <li class="nav-item">
+            <a href="#patrocinio" class="nav-link">PARCERIA</a>
+          </li>
+          <li class="nav-separator" aria-hidden="true">|</li>
+          <li class="nav-item">
+            <a href="#noticias" class="nav-link">NOTÍCIAS</a>
+          </li>
+          <li class="nav-separator" aria-hidden="true">|</li>
+          <li class="nav-item">
+            <a href="#contato" class="nav-link">CONTATO</a>
+          </li>
+          <li class="nav-separator" aria-hidden="true">|</li>
+          <li class="nav-item nav-item-tooltip">
+            <a href="#loja" class="nav-link nav-link-highlight">LOJA</a>
+            <span class="nav-tooltip" role="tooltip">Em breve</span>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 3. Bloco Lateral: #CARCARÁDOVALE + Redes Sociais -->
+      <div class="header-social-block">
+        <span class="hashtag-tagline">#CARCARÁDOVALE</span>
+        <div class="social-links">
+          <!-- Instagram Oficial -->
+          <a href="https://www.instagram.com/bigvalleytremembe/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram Big Valley">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==============================================
+       PRIMEIRA DOBRA: BANNER HERO ÚNICO (DESKTOP E MOBILE)
+       ============================================== -->
+  <section class="hero-banner-section" id="home">
+    <div class="hero-image-wrapper">
+      <picture class="hero-picture">
+        <source media="(max-width: 900px)" srcset="assets/imagem-topo-mobile.jpg">
+        <img src="assets/hero-carcara.jpg" alt="Tremembé Big Valley - Carcará do Vale" class="hero-image">
+      </picture>
+      <div class="hero-gradient-overlay"></div>
+    </div>
+  </section>
+
+  <!-- ==============================================
+       SEGUNDA DOBRA: 3 CARDS PREMIUM (SOBREPOSIÇÃO 15%)
+       ============================================== -->
+  <section class="overlap-cards-section">
+    <div class="cards-container">
+      
+      <!-- Card 1: Faça parte da nossa equipe -->
+      <article class="premium-card">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScEcITK5B3UhJ2yha8_sOssPmiDmdFRlZHHyMHk5dhPHHJATQ/viewform" target="_blank" rel="noopener noreferrer" class="card-inner-link">
+          <div class="card-media-wrapper">
+            <img src="assets/bigvalley-card01.jpg" alt="Faça parte da nossa equipe - Big Valley" class="card-image" loading="lazy">
+            <div class="card-overlay"></div>
+          </div>
+          <div class="card-action-bar">
+            <h3 class="card-title">FAÇA PARTE <br class="mobile-br">DA NOSSA EQUIPE</h3>
+            <span class="card-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 2: Conheça o Movimento -->
+      <article class="premium-card">
+        <a href="#historia" class="card-inner-link">
+          <div class="card-media-wrapper">
+            <img src="assets/movimento-card01.jpg" alt="Conheça o Movimento - Carcará do Vale" class="card-image" loading="lazy">
+            <div class="card-overlay"></div>
+          </div>
+          <div class="card-action-bar">
+            <h3 class="card-title">CONHEÇA O MOVIMENTO</h3>
+            <span class="card-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 3: Calendário 2027 -->
+      <article class="premium-card">
+        <a href="#calendario" class="card-inner-link">
+          <div class="card-media-wrapper">
+            <img src="assets/calendario-card03.jpg" alt="Calendário 2027 - Temporada" class="card-image" loading="lazy">
+            <div class="card-overlay"></div>
+          </div>
+          <div class="card-action-bar">
+            <h3 class="card-title">CALENDÁRIO 2027</h3>
+            <span class="card-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ==============================================
+       SEÇÃO: PARCEIROS DE CAMPO (TEXTO + BANNER SLIDER)
+       ============================================== -->
+  <section class="partners-section" id="parceria">
+    <div class="partners-container">
+      
+      <!-- Coluna Esquerda (50%): Textos Alinhados à Esquerda -->
+      <div class="partners-text-col">
+        <h2 class="partners-title">PARCEIROS<br>DE CAMPO</h2>
+        <p class="partners-headline">
+          Quem joga junto com o Big Valley<br class="desktop-br"> também fortalece a nossa torcida!
+        </p>
+        <p class="partners-description">
+          Conheça as marcas que acreditam no nosso time<br class="desktop-br"> e aproveite condições especiais oferecidas<br class="desktop-br"> exclusivamente para a nossa torcida Tremembé.
+        </p>
+      </div>
+
+      <!-- Coluna Direita (50%): Banner Slider Automático (5s) -->
+      <div class="partners-slider-col">
+        <div class="slider-wrapper" id="partnerSlider">
+          <div class="slider-track" id="sliderTrack">
+            
+            <!-- Slide 1: Espaço Reservado -->
+            <div class="slider-slide active">
+              <div class="slide-placeholder-card">
+                <div class="slide-inner-content">
+                  <span class="slide-tag">ESPAÇO PARCEIRO</span>
+                  <h4 class="slide-brand-placeholder">BANNER 01</h4>
+                  <p class="slide-note">Espaço reservado para o banner da marca parceira</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Espaço Reservado -->
+            <div class="slider-slide">
+              <div class="slide-placeholder-card">
+                <div class="slide-inner-content">
+                  <span class="slide-tag">ESPAÇO PARCEIRO</span>
+                  <h4 class="slide-brand-placeholder">BANNER 02</h4>
+                  <p class="slide-note">Espaço reservado para o banner da marca parceira</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3: Espaço Reservado -->
+            <div class="slider-slide">
+              <div class="slide-placeholder-card">
+                <div class="slide-inner-content">
+                  <span class="slide-tag">ESPAÇO PARCEIRO</span>
+                  <h4 class="slide-brand-placeholder">BANNER 03</h4>
+                  <p class="slide-note">Espaço reservado para o banner da marca parceira</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Indicadores de Slide (Dots) -->
+          <div class="slider-indicators" id="sliderDots">
+            <button class="dot-btn active" data-index="0" aria-label="Slide 1"></button>
+            <button class="dot-btn" data-index="1" aria-label="Slide 2"></button>
+            <button class="dot-btn" data-index="2" aria-label="Slide 3"></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==============================================
+       SEÇÃO: SOBRE O TIME / NOSSA HISTÓRIA (FUNDO #FFFCEF)
+       ============================================== -->
+  <section class="about-section" id="historia">
+    
+    <!-- Divisória Superior entre Seções: Penas 2 (Sobe 15% com Modo Multiply) -->
+    <div class="about-divider-top">
+      <img src="assets/divisoria-penas2.png" alt="Divisória Penas Big Valley" class="divider-feathers-img" style="mix-blend-mode: multiply !important;">
+    </div>
+
+    <div class="about-container">
+      
+      <!-- Coluna Esquerda: Foto das atletas com fundo transparente recortado -->
+      <div class="about-image-col">
+        <div class="about-image-wrapper">
+          <img src="assets/nossa-historia.png" alt="Equipe Tremembé Big Valley - Nossa História" class="about-image">
+        </div>
+      </div>
+
+      <!-- Coluna Direita: Textos -->
+      <div class="about-text-col">
+        <h2 class="about-title"><span class="title-gold">NASCIDAS NO VALE</span><br>FORJADAS NO TOPO</h2>
+        <p class="about-tagline">Mais que um time. Uma região que voa.</p>
+        <div class="about-description">
+          <p>
+            O Tremembé Big Valley nasceu para ser uma potência do Flag Football no Vale do Paraíba e para abrir caminhos dentro do esporte.
+          </p>
+          <p>
+            Somos o primeiro time da região a trazer o <strong>Flag Football Feminino como modalidade exclusiva</strong>, colocando as mulheres no centro do jogo e fortalecendo o protagonismo feminino dentro e fora de campo.
+          </p>
+          <p>
+            Unimos rendimento esportivo, representatividade e impacto social para construir algo maior que uma equipe. <strong>Somos força, identidade e pertencimento. Somos o movimento que carrega o Vale no peito.</strong>
+          </p>
+          <p class="about-signature">
+            <strong class="highlight-gold">Somos o Carcará do Vale.</strong>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==============================================
+       SEÇÃO: CALENDÁRIO 2027 & PRÓXIMOS JOGOS (FUNDO #000000)
+       ============================================== -->
+  <section class="schedule-section" id="calendario">
+    <div class="schedule-container">
+      
+      <!-- Coluna Esquerda: Horários de Treino -->
+      <div class="schedule-col-left">
+        <h2 class="schedule-main-title">CALENDÁRIO 2027</h2>
+        
+        <div class="training-card-box">
+          <h3 class="training-subtitle">HORÁRIOS DE TREINO</h3>
+          
+          <div class="training-list">
+            
+            <!-- Treino 1 -->
+            <div class="training-item">
+              <div class="training-header-line">
+                <span class="training-day">Terça</span>
+                <span class="training-sep">—</span>
+                <span class="training-hour">19h30</span>
+              </div>
+              <div class="training-place">
+                <span class="place-label">Local:</span> Campo CTI - Taubaté
+              </div>
+            </div>
+
+            <div class="training-divider-line"></div>
+
+            <!-- Treino 2 -->
+            <div class="training-item">
+              <div class="training-header-line">
+                <span class="training-day">Quinta</span>
+                <span class="training-sep">—</span>
+                <span class="training-hour">19h30</span>
+              </div>
+              <div class="training-place">
+                <span class="place-label">Local:</span> Campo CTI - Taubaté
+              </div>
+            </div>
+
+            <div class="training-divider-line"></div>
+
+            <!-- Treino 3 -->
+            <div class="training-item">
+              <div class="training-header-line">
+                <span class="training-day">Sábado</span>
+                <span class="training-sep">—</span>
+                <span class="training-hour">8h00</span>
+              </div>
+              <div class="training-place">
+                <span class="place-label">Local:</span> Ginásio Tremembé
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Botão CTA -->
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScEcITK5B3UhJ2yha8_sOssPmiDmdFRlZHHyMHk5dhPHHJATQ/viewform" target="_blank" rel="noopener noreferrer" class="btn-join-squad">
+            <span>QUERO FAZER PARTE DO TIME</span>
+            <span class="btn-arrow-icon" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Coluna Direita: Próximos Jogos (2 cards horizontais) -->
+      <div class="schedule-col-right">
+        <h2 class="schedule-main-title title-white">PRÓXIMOS JOGOS</h2>
+
+        <div class="games-horizontal-stack">
+          
+          <!-- Card Superior: Campeonato Paulista - Logo APFA -->
+          <div class="game-card-horizontal">
+            <div class="game-logo-box">
+              <img src="assets/logo-apfa.png" alt="Federação APFA - Campeonato Paulista" class="game-logo-img">
+            </div>
+            <div class="game-content-box">
+              <span class="game-championship-tag">FEDERAÇÃO PAULISTA DE FLAG FOOTBALL</span>
+              <h4 class="game-name-title">CAMPEONATO PAULISTA</h4>
+              <div class="game-status-pill">
+                <span class="status-indicator-dot"></span>
+                <span class="status-pill-text">A CONFIRMAR</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Inferior: Campeonato Brasileiro - Logo CBFA -->
+          <div class="game-card-horizontal">
+            <div class="game-logo-box">
+              <img src="assets/logo-cbfa.png" alt="CBFA - Campeonato Brasileiro" class="game-logo-img">
+            </div>
+            <div class="game-content-box">
+              <span class="game-championship-tag">CONFEDERAÇÃO BRASILEIRA DE FUTEBOL AMERICANO</span>
+              <h4 class="game-name-title">CAMPEONATO BRASILEIRO</h4>
+              <div class="game-status-pill">
+                <span class="status-indicator-dot"></span>
+                <span class="status-pill-text">A CONFIRMAR</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==============================================
+       SEÇÃO: PATROCÍNIO (VAMOS VOAR JUNTOS?)
+       ============================================== -->
+  <section class="sponsorship-section" id="patrocinio">
+    <div class="sponsorship-container">
+      <div class="sponsorship-content">
+        <span class="sponsorship-tagline">FAÇA PARTE DESSA HISTÓRIA</span>
+        <h2 class="sponsorship-title">VAMOS VOAR JUNTOS?</h2>
+        <p class="sponsorship-description">
+          O Tremembé Big Valley já nasceu forte.<br class="desktop-br"> Junte sua marca ao esporte que mais cresce no Brasil.
+        </p>
+        <a href="https://wa.me/5512991817235?text=Ol%C3%A1%2C%20quero%20saber%20como%20funciona%20o%20patroc%C3%ADnio%20do%20time%20Big%20Valley..." target="_blank" rel="noopener noreferrer" class="btn-sponsor-white">
+          <span>QUERO SER UM PATROCINADOR</span>
+          <span class="btn-arrow-icon" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================================
+       SEÇÃO: ACOMPANHE NOSSO INSTAGRAM (FUNDO #FFFCEF)
+       ============================================== -->
+  <section class="social-feed-section" id="noticias">
+    <div class="social-feed-container">
+      
+      <!-- Cabeçalho Centralizado da Seção -->
+      <div class="social-feed-header">
+        <h2 class="social-feed-title">ACOMPANHE NOSSO INSTAGRAM</h2>
+        <a href="https://www.instagram.com/bigvalleytremembe/" target="_blank" rel="noopener noreferrer" class="social-feed-handle">
+          <svg class="instagram-icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span>@bigvalleytremembe</span>
+        </a>
+      </div>
+
+      <!-- Carrossel com os 4 Últimos Posts do Instagram -->
+      <div class="insta-carousel-wrapper">
+        <div class="insta-carousel-track" id="instaFeedTrack">
+          
+          <!-- Post 1 -->
+          <article class="insta-post-card">
+            <a href="https://www.instagram.com/bigvalleytremembe/" target="_blank" rel="noopener noreferrer" class="insta-card-link" aria-label="Ver Post 1 no Instagram">
+              <div class="insta-post-content">
+                <svg class="insta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span class="insta-post-label">Post 1</span>
+                <span class="insta-view-label">Ver no Instagram →</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- Post 2 -->
+          <article class="insta-post-card">
+            <a href="https://www.instagram.com/bigvalleytremembe/" target="_blank" rel="noopener noreferrer" class="insta-card-link" aria-label="Ver Post 2 no Instagram">
+              <div class="insta-post-content">
+                <svg class="insta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span class="insta-post-label">Post 2</span>
+                <span class="insta-view-label">Ver no Instagram →</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- Post 3 -->
+          <article class="insta-post-card">
+            <a href="https://www.instagram.com/bigvalleytremembe/" target="_blank" rel="noopener noreferrer" class="insta-card-link" aria-label="Ver Post 3 no Instagram">
+              <div class="insta-post-content">
+                <svg class="insta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span class="insta-post-label">Post 3</span>
+                <span class="insta-view-label">Ver no Instagram →</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- Post 4 -->
+          <article class="insta-post-card">
+            <a href="https://www.instagram.com/bigvalleytremembe/" target="_blank" rel="noopener noreferrer" class="insta-card-link" aria-label="Ver Post 4 no Instagram">
+              <div class="insta-post-content">
+                <svg class="insta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span class="insta-post-label">Post 4</span>
+                <span class="insta-view-label">Ver no Instagram →</span>
+              </div>
+            </a>
+          </article>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==============================================
+       SEÇÃO: EMPRESAS QUE JOGAM COM A GENTE (CENTRALIZADA)
+       ============================================== -->
+  <section class="sponsors-showcase-section" id="empresas-parceiras">
+    <div class="sponsors-showcase-container">
+      
+      <!-- Título Centralizado -->
+      <h2 class="sponsors-showcase-title">Parceiros que jogam com a gente</h2>
+
+      <!-- Duas Linhas de Patrocinadores (5 em cima, 4 embaixo) / Carrossel Contínuo no Mobile -->
+      <div class="sponsors-rows-wrapper sponsors-marquee-wrapper">
+        <div class="sponsors-marquee-track">
+          <!-- Linha 1: 5 Marcas -->
+          <div class="sponsors-row sponsors-row-5">
+            <div class="sponsor-brand-item">
+              <svg class="sponsor-brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+              <span class="sponsor-brand-name">Marca 01</span>
+            </div>
+            <div class="sponsor-brand-item">
+              <svg class="sponsor-brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+              <span class="sponsor-brand-name">Marca 02</span>
+            </div>
+            <div class="sponsor-brand-item">
+              <svg class="sponsor-brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <span class="sponsor-brand-name">Marca 03</span>
+            </div>
+            <div class="sponsor-brand-item">
+              <svg class="sponsor-brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+              <span class="sponsor-brand-name">Marca 04</span>
+            </div>
+            <div class="sponsor-brand-item">
+              <svg class="sponsor-brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M11 3 8 9l4 13 4-13-3-6"/></svg>
+              <span class="sponsor-brand-name">Marca 05</span>
+            </div>
+          </div>
+
+          <!-- Linha 2: 4 Marcas Centralizadas -->
+          <div class="sponsors-row sponsors-row-4">
+            <div class="sponsor-brand-item">
+              <svg class="sponsor-brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+              <span class="sponsor-brand-name">Marca 06</span>
+            </div>
+            <div class="sponsor-brand-item">
+              <svg class="sponsor-brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8"/><path d="M3.6 15h16.8"/><path d="M11.5 3a17 17 0 0 0 0 18"/><path d="M12.5 3a17 17 0 0 1 0 18"/></svg>
+              <span class="sponsor-brand-name">Marca 07</span>
+            </div>
+            <div class="sponsor-brand-item">
+              <svg class="sponsor-brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.178 8c5.096 0 5.096 8 0 8-5.095 0-7.267-8-12.362-8-5.096 0-5.096 8 0 8 5.095 0 7.267-8 12.362-8z"/></svg>
+              <span class="sponsor-brand-name">Marca 08</span>
+            </div>
+            <div class="sponsor-brand-item">
+              <svg class="sponsor-brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg>
+              <span class="sponsor-brand-name">Marca 09</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Clone para carrossel contínuo infinito no mobile -->
+        <div class="sponsors-marquee-track sponsors-marquee-clone" aria-hidden="true">
+          <div class="sponsors-row sponsors-row-5">
+            <div class="sponsor-brand-item">
+              <svg class="sponsor-brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+              <span class="sponsor-brand-name">Marca 01</span>
+            </div>
+            <div class="sponsor-brand-item">
+              <svg class="sponsor-brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+              <span class="sponsor-brand-name">Marca 02</span>
+            </div>
+            <div class="sponsor-brand-item">
+              <svg class="sponsor-brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <span class="sponsor-brand-name">Marca 03</span>
+            </div>
+            <div class="sponsor-brand-item">
+              <svg class="sponsor-brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+              <span class="sponsor-brand-name">Marca 04</span>
+            </div>
+            <div class="sponsor-brand-item">
+              <svg class="sponsor-brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M11 3 8 9l4 13 4-13-3-6"/></svg>
+              <span class="sponsor-brand-name">Marca 05</span>
+            </div>
+          </div>
+          <div class="sponsors-row sponsors-row-4">
+            <div class="sponsor-brand-item">
+              <svg class="sponsor-brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+              <span class="sponsor-brand-name">Marca 06</span>
+            </div>
+            <div class="sponsor-brand-item">
+              <svg class="sponsor-brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8"/><path d="M3.6 15h16.8"/><path d="M11.5 3a17 17 0 0 0 0 18"/><path d="M12.5 3a17 17 0 0 1 0 18"/></svg>
+              <span class="sponsor-brand-name">Marca 07</span>
+            </div>
+            <div class="sponsor-brand-item">
+              <svg class="sponsor-brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.178 8c5.096 0 5.096 8 0 8-5.095 0-7.267-8-12.362-8-5.096 0-5.096 8 0 8 5.095 0 7.267-8 12.362-8z"/></svg>
+              <span class="sponsor-brand-name">Marca 08</span>
+            </div>
+            <div class="sponsor-brand-item">
+              <svg class="sponsor-brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg>
+              <span class="sponsor-brand-name">Marca 09</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==============================================
+       RODAPÉ / SITEMAP (FUNDO BACKGROUND.JPG)
+       ============================================== -->
+  <footer class="site-footer-section" id="rodape">
+    <div class="footer-container">
+      
+      <!-- Coluna 0: Escudo do Time ao Lado Esquerdo do Sitemap -->
+      <div class="footer-col footer-col-shield">
+        <a href="#" class="footer-shield-link" aria-label="Início Tremembé Big Valley">
+          <img src="assets/logotipo.png" alt="Escudo Tremembé Big Valley" class="footer-shield-img">
+        </a>
+      </div>
+
+      <!-- Coluna 1: Sitemap 1 -->
+      <div class="footer-col footer-col-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#" class="footer-nav-link">Início</a></li>
+          <li><a href="#historia" class="footer-nav-link">Nossa História</a></li>
+          <li><a href="#equipe" class="footer-nav-link">Equipe</a></li>
+          <li><a href="#patrocinio" class="footer-nav-link">Parceria</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 2: Sitemap 2 -->
+      <div class="footer-col footer-col-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#calendario" class="footer-nav-link">Calendário 2027</a></li>
+          <li><a href="#contato" class="footer-nav-link">Contato</a></li>
+          <li>
+            <a href="#loja" class="footer-nav-link footer-nav-loja">
+              <span>Loja</span>
+              <span class="footer-loja-tag">Em breve</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3: Identidade (#CarcaráDoVale + Insta + Email) & Apoio (Tremembé) -->
+      <div class="footer-col footer-col-brand" id="contato">
+        
+        <!-- Linha de Cima: #CarcaráDoVale (Cyber Brush) + Instagram + Email embaixo sem contorno -->
+        <div class="footer-brand-top-stack">
+          <span class="footer-hashtag">#CarcaráDoVale</span>
+          <div class="footer-contact-links">
+            <a href="https://www.instagram.com/bigvalleytremembe/" target="_blank" rel="noopener noreferrer" class="footer-insta-handle" aria-label="Instagram @bigvalleytremembe">
+              <svg class="footer-insta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <span>@bigvalleytremembe</span>
+            </a>
+            <a href="mailto:bigvalleytremembe@gmail.com" class="footer-email-handle" aria-label="E-mail bigvalleytremembe@gmail.com">
+              <svg class="footer-email-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+              <span>bigvalleytremembe@gmail.com</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Linha de Baixo: Apoio: Logo Tremembé (na frente do apoio mesmo, na mesma linha) -->
+        <div class="footer-brand-row-bottom">
+          <span class="footer-support-label">Apoio:</span>
+          <img src="assets/Logo-tremembe.svg" alt="Prefeitura Municipal de Tremembé" class="footer-logo-tremembe">
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Barra Inferior de Direitos Autorais -->
+    <div class="footer-bottom-bar">
+      <p>© 2026 Tremembé Big Valley.<br>Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Espaçador de Demonstração / Continuação do Conteúdo -->
+  <div class="content-spacer"></div>
+
+  <script>
+    // Toggle Menu Mobile
+    const toggle = document.getElementById('mobileToggle');
+    const nav = document.getElementById('headerNav');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      nav.classList.toggle('active');
+    });
+
+    // Fechar menu mobile ao clicar em um link
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        nav.classList.remove('active');
+      });
+    });
+
+    // Slider Automático de Parceiros (Ciclo de 5 segundos)
+    const slides = document.querySelectorAll('.slider-slide');
+    const dots = document.querySelectorAll('.dot-btn');
+    let currentSlide = 0;
+    const slideIntervalTime = 5000; // 5 segundos por slide
+    let slideTimer;
+
+    function goToSlide(index) {
+      slides[currentSlide].classList.remove('active');
+      dots[currentSlide].classList.remove('active');
+      currentSlide = (index + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
+
+    function startSlideTimer() {
+      slideTimer = setInterval(nextSlide, slideIntervalTime);
+    }
+
+    function resetSlideTimer() {
+      clearInterval(slideTimer);
+      startSlideTimer();
+    }
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        const targetIndex = parseInt(e.target.getAttribute('data-index'), 10);
+        goToSlide(targetIndex);
+        resetSlideTimer();
+      });
+    });
+
+    startSlideTimer();
+  </script>
+</body>
+</html>

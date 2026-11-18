@@ -1,0 +1,2599 @@
+/* ========================================================
+   FONTE PERSONALIZADA: CYBER BRUSH
+   ======================================================== */
+@font-face {
+  font-family: 'Cyber Brush';
+  src: url('assets/cyber-brush.ttf') format('truetype'),
+       url('assets/Cyber%20Brush.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ========================================================
+   TREMEMBÉ BIG VALLEY - ESTILO MINIMALISTA & MODERNO
+   ======================================================== */
+
+:root {
+  --color-black-main: #0A0A0A;
+  --color-black-surface: #121212;
+  --color-gold-main: #D4A017;
+  --color-gold-hover: #F0B31E;
+  --color-gold-subtle: rgba(212, 160, 23, 0.15);
+  --color-white: #FFFFFF;
+  --color-white-dim: #E6E6E6;
+  --color-gray-mountain: #D9D9D9;
+  --color-separator: rgba(255, 255, 255, 0.22);
+
+  --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-title: 'Bebas Neue', sans-serif;
+  --font-primary: var(--font-body);
+
+  --header-height: 120px;
+}
+
+/* Reset Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-black-main);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Regra Oficial de Títulos: Bebas Neue em Maiúsculo */
+h1, h2, h3, h4, h5, h6, .section-title, .title-display {
+  font-family: var(--font-title);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ========================================================
+   HEADER MINIMALISTA
+   ======================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  background-color: var(--color-black-main);
+  border-bottom: 1px solid rgba(212, 160, 23, 0.35);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.header-container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+/* 1. Logotipo (Carcará Dourado) */
+.header-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.header-brand:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.brand-logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* 2. Menu Central: Maiúsculas, Fino & Minimalista */
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--color-white-dim);
+  text-decoration: none;
+  font-family: var(--font-primary);
+  font-size: 0.84rem;
+  font-weight: 300; /* Minimalista e fino */
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.35rem 0.2rem;
+  position: relative;
+  transition: color 0.25s ease;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: var(--color-gold-main);
+}
+
+.nav-link-highlight {
+  color: var(--color-gold-main);
+  font-weight: 400;
+}
+
+.nav-link-highlight:hover {
+  color: var(--color-gold-hover);
+}
+
+/* Tooltip "Em breve" para Loja */
+.nav-item-tooltip {
+  position: relative;
+}
+
+.nav-tooltip {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background-color: #161616;
+  color: var(--color-gold-main);
+  border: 1px solid rgba(212, 160, 23, 0.45);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8), 0 0 10px rgba(212, 160, 23, 0.2);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  z-index: 100;
+}
+
+.nav-tooltip::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  background-color: #161616;
+  border-left: 1px solid rgba(212, 160, 23, 0.45);
+  border-top: 1px solid rgba(212, 160, 23, 0.45);
+}
+
+.nav-item-tooltip:hover .nav-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-separator {
+  color: var(--color-separator);
+  font-size: 0.72rem;
+  font-weight: 200;
+  user-select: none;
+  opacity: 0.6;
+}
+
+/* 3. Bloco Direito: #CARCARÁDOVALE lado a lado com Ícones Sociais */
+.header-social-block {
+  display: flex;
+  flex-direction: row; /* Alinhamento horizontal lado a lado */
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+
+.hashtag-tagline {
+  font-family: var(--font-primary);
+  font-size: 0.84rem;
+  font-weight: 400; /* Fino e minimalista */
+  letter-spacing: 0.14em;
+  color: var(--color-gold-main);
+  text-transform: uppercase;
+  line-height: 1;
+  user-select: none;
+  white-space: nowrap;
+  transition: color 0.2s ease, letter-spacing 0.25s ease;
+}
+
+.hashtag-tagline:hover {
+  color: var(--color-gold-hover);
+  letter-spacing: 0.16em;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white-dim);
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  width: 28px;
+  height: 28px;
+}
+
+.social-btn svg {
+  width: 25px; /* Aumentado para pelo menos 25px conforme solicitado */
+  height: 25px;
+}
+
+.social-btn:hover {
+  color: var(--color-gold-main);
+  opacity: 1;
+  transform: translateY(-1px) scale(1.08);
+}
+
+/* ========================================================
+   PRIMEIRA DOBRA (HERO SECTION - IMAGEM ÚNICA)
+   ======================================================== */
+
+.hero-banner-section {
+  width: 100%;
+  background-color: var(--color-black-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-image-wrapper {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-picture {
+  width: 100%;
+  display: block;
+  line-height: 0;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  max-height: calc(100vh - var(--header-height));
+  object-fit: cover;
+  object-position: top center; /* Alinhada superior ao centro */
+  display: block;
+}
+
+.hero-gradient-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background: linear-gradient(to bottom, transparent, rgba(10, 10, 10, 0.75));
+  pointer-events: none;
+}
+
+/* ========================================================
+   SEGUNDA DOBRA: 3 CARDS PREMIUM (SOBREPOSIÇÃO)
+   ======================================================== */
+
+.overlap-cards-section {
+  position: relative;
+  z-index: 20;
+  background-color: #000000; /* Fundo preto absoluto após a primeira dobra */
+  padding-bottom: 3rem;
+}
+
+.cards-container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem; /* Reduzido em 50% (anterior: 1.8rem) */
+  transform: translateY(-95px); /* Subiu 30px (anterior: -65px) */
+}
+
+/* Sombra profunda no primeiro card para criar profundidade sobre a primeira dobra */
+.cards-container .premium-card:first-child {
+  box-shadow: 0 -16px 45px rgba(0, 0, 0, 0.88), 
+              0 25px 60px rgba(0, 0, 0, 0.95), 
+              0 0 40px rgba(0, 0, 0, 0.8);
+  position: relative;
+  z-index: 2;
+}
+
+/* Card Individual */
+.premium-card {
+  background-color: #111111;
+  border-radius: 24px; /* Bordas significativamente mais arredondadas e curvas */
+  overflow: hidden;
+  border: 1px solid rgba(212, 160, 23, 0.35);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.85);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.35s ease, 
+              box-shadow 0.35s ease;
+  position: relative;
+}
+
+.premium-card:hover {
+  transform: translateY(-9px);
+  border-color: var(--color-gold-hover);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.95), 0 0 25px rgba(212, 160, 23, 0.35);
+}
+
+.card-inner-link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+/* Área de Mídia / Imagem do Card */
+.card-media-wrapper {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  background-color: #171717;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-card:hover .card-image {
+  transform: scale(1.07);
+}
+
+.card-placeholder-bg {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease;
+}
+
+.premium-card:hover .card-placeholder-bg {
+  transform: scale(1.05);
+}
+
+/* Backgrounds temáticos provisórios com identidade visual */
+.card-bg-equipe {
+  background: radial-gradient(circle at center, #261f0e 0%, #121212 100%);
+}
+
+.card-bg-movimento {
+  background: radial-gradient(circle at center, #2d230e 0%, #141414 100%);
+}
+
+.card-bg-calendario {
+  background: radial-gradient(circle at center, #221c0e 0%, #101010 100%);
+}
+
+.card-watermark {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  color: rgba(212, 160, 23, 0.3);
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(10,10,10,0.6) 100%);
+}
+
+/* Barra Inferior de Título: Background Dourado e Centralizado */
+.card-action-bar {
+  background-color: var(--color-gold-main); /* Cor dourada oficial */
+  padding: 1.15rem 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centralização do Título + Seta */
+  text-align: center;
+  gap: 0.75rem;
+  transition: background-color 0.3s ease, filter 0.3s ease;
+}
+
+.premium-card:hover .card-action-bar {
+  background-color: var(--color-gold-hover);
+  filter: brightness(1.03);
+}
+
+.card-title {
+  font-family: var(--font-body); /* Montserrat */
+  font-size: 1rem;
+  font-weight: 900; /* Peso Black / Extra Bold máximo para alto impacto esportivo */
+  font-style: italic; /* Modo Itálico */
+  letter-spacing: 0.03em;
+  color: var(--color-black-main); /* Preto em alto contraste com o dourado */
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.mobile-br {
+  display: none;
+}
+
+.card-arrow {
+  color: var(--color-black-main);
+  font-size: 1.35rem;
+  font-weight: 900;
+  line-height: 1;
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.premium-card:hover .card-arrow {
+  transform: translateX(4px);
+}
+
+/* ========================================================
+   SEÇÃO: PARCEIROS DE CAMPO (2 COLUNAS & SLIDER AUTOMÁTICO)
+   ======================================================== */
+
+.partners-section {
+  width: 100%;
+  padding: calc(4rem - 20px) 0 6rem; /* Padding superior reduzido em 20px acima de Parceiros de Campo */
+  background-color: #000000; /* Fundo preto absoluto #000000 */
+  position: relative;
+}
+
+.partners-container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 50% texto à esquerda, 50% slider à direita */
+  gap: 4.5rem;
+  align-items: center;
+}
+
+/* Coluna Esquerda: Textos Alinhados à Esquerda */
+.partners-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding-left: 80px; /* Padding de 80px na lateral esquerda da coluna de texto */
+}
+
+.partners-title {
+  font-family: var(--font-title);
+  font-size: clamp(3.6rem, 5.8vw, 5.2rem); /* Aumentado conforme solicitado */
+  color: var(--color-gold-main);
+  line-height: 0.93;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 20px rgba(212, 160, 23, 0.2);
+}
+
+.partners-headline {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.45;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.01em;
+}
+
+.partners-description {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--color-gray-mountain);
+  line-height: 1.8;
+  max-width: 620px;
+}
+
+.desktop-br {
+  display: inline;
+}
+
+/* Coluna Direita: Slider 50% com Slides de 5s */
+.partners-slider-col {
+  width: 100%;
+  padding-right: 80px; /* Padding de 80px na lateral direita do banner */
+}
+
+.slider-wrapper {
+  position: relative;
+  width: calc(100% + 30px); /* Aumenta 30px em direção à esquerda */
+  margin-left: -30px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 160, 23, 0.35);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9), 0 0 25px rgba(212, 160, 23, 0.12);
+  background-color: #121212;
+}
+
+.slider-track {
+  position: relative;
+  width: 100%;
+  height: 340px;
+}
+
+.slider-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: scale(0.98);
+}
+
+.slider-slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.slider-slide img,
+.slide-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Card Placeholder do Slide */
+.slide-placeholder-card {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 40%, #292110 0%, #0d0d0d 85%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-placeholder-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(212, 160, 23, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.slide-inner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  z-index: 2;
+}
+
+.slide-tag {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  border: 1px dashed rgba(212, 160, 23, 0.6);
+  border-radius: 30px;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--color-gold-main);
+}
+
+.slide-brand-placeholder {
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  letter-spacing: 0.1em;
+  color: var(--color-white);
+  margin: 0;
+}
+
+.slide-note {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--color-gray-mountain);
+  max-width: 320px;
+}
+
+/* Indicadores de Slide (Dots) */
+.slider-indicators {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  z-index: 10;
+}
+
+.dot-btn {
+  width: 28px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.35s ease;
+}
+
+.dot-btn.active {
+  width: 42px;
+  background-color: var(--color-gold-main);
+  box-shadow: 0 0 10px rgba(212, 160, 23, 0.8);
+}
+
+/* ========================================================
+   SEÇÃO: NOSSA HISTÓRIA / SOBRE O TIME (FUNDO #FFFCEF)
+   ======================================================== */
+
+.about-section {
+  width: 100%;
+  padding: 0;
+  background-color: #fffcef;
+  color: #0A0A0A;
+  position: relative;
+  overflow-x: clip; /* Não corta a subida de 15% da divisória na vertical */
+  scroll-margin-top: 80px; /* Offset perfeito para o cabeçalho fixo */
+}
+
+/* Divisória Superior de Penas (Sobe 15% sobre a seção preta acima com Multiply) */
+.about-divider-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(-15%); /* Sobe 15% sobre a seção preta acima */
+  overflow: visible;
+  line-height: 0;
+  z-index: 4; /* Camada sobre os fundos, abaixo dos textos/atletas */
+  pointer-events: none;
+}
+
+.divider-feathers-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 280px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  mix-blend-mode: multiply !important; /* Multiply sobre tudo o que estiver embaixo */
+}
+
+/* Container do Conteúdo (Camada Superior sobre a divisória) */
+.about-container {
+  max-width: 1340px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 1.75rem; /* Padding inferior reduzido em 50% (de 3.5rem para 1.75rem) */
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr; /* Imagem 30% maior, coluna de texto 90% */
+  gap: 3.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 10; /* Fica sobre a divisória */
+}
+
+/* Coluna Esquerda: Imagem com mix-blend-mode: multiply sobre TODAS as camadas */
+.about-image-col {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+}
+
+.about-image-wrapper {
+  width: 100%;
+  max-width: 808px; /* Reduzido em 10% */
+  display: flex;
+  justify-content: center;
+  background: transparent !important; /* Transparente para não bloquear a divisória */
+  position: relative;
+  z-index: 10;
+}
+
+.about-image {
+  width: 110%; /* Reduzido em 10% */
+  max-width: 110%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  transform: translateX(-3%);
+  transition: transform 0.4s ease;
+  position: relative;
+  z-index: 10;
+}
+
+.about-image:hover {
+  transform: scale(1.02);
+}
+
+/* Coluna Direita: Conteúdo Textual (Aumentado 10% para a esquerda) */
+.about-text-col {
+  width: 100%;
+  max-width: 100%;
+  margin-left: -10%; /* Aumenta 10% da largura para a esquerda sem mover a imagem */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.about-title {
+  font-family: var(--font-title); /* Bebas Neue */
+  font-size: clamp(2.6rem, 3.8vw, 3.6rem); /* Tamanho adaptado para manter a quebra exata */
+  text-transform: uppercase;
+  color: #0A0A0A;
+  line-height: 0.98;
+  letter-spacing: 0.04em;
+  padding-top: 60px; /* Padding de 60px acima do título */
+  margin-bottom: 1.25rem;
+}
+
+.title-gold {
+  color: #B8860B; /* "Nascidas no Vale" em Dourado Oficial */
+  display: inline;
+}
+
+.about-tagline {
+  font-family: var(--font-body); /* Montserrat */
+  font-size: 1.28rem;
+  font-weight: 700;
+  text-transform: none !important; /* Texto em minúsculas conforme solicitado */
+  color: #B8860B; /* Dourado com excelente contraste e vivacidade no fundo claro */
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.01em;
+}
+
+.about-description {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 580px;
+}
+
+.about-description p {
+  font-family: var(--font-body); /* Montserrat */
+  font-size: 1.08rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #222222;
+  margin: 0;
+}
+
+.about-description strong {
+  font-weight: 700;
+  color: #0A0A0A;
+}
+
+.about-signature {
+  margin-top: 0.4rem;
+}
+
+.about-signature strong.highlight-gold {
+  color: #B8860B;
+  font-size: 1.24rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  display: inline-block;
+}
+
+/* Destaque do Carcará do Vale */
+.highlight-gold {
+  color: #B8860B;
+  font-weight: 700;
+  display: inline;
+}
+
+/* ========================================================
+   SEÇÃO: CALENDÁRIO 2027 & PRÓXIMOS JOGOS (FUNDO PRETO #000)
+   ======================================================== */
+
+.schedule-section {
+  width: 100%;
+  padding: 12rem 0 9.5rem; /* Padding superior aumentado */
+  background-color: #000000;
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background de Montanhas Fixo com Luminosidade e Opacidade 12% */
+.schedule-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('assets/bg-montanhas.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Fixo na página */
+  background-repeat: no-repeat;
+  opacity: 0.12; /* Opacidade reduzida para 12% */
+  mix-blend-mode: luminosity; /* Modo de mesclagem de luminosidade */
+  pointer-events: none;
+  z-index: 1;
+}
+
+.schedule-container {
+  width: 70%; /* Largura ajustada para 70% */
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 4.5rem;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+.schedule-main-title {
+  font-family: var(--font-title); /* Bebas Neue */
+  font-size: clamp(2.8rem, 4.4vw, 3.8rem); /* Título aumentado */
+  text-transform: uppercase;
+  color: var(--color-gold-main);
+  letter-spacing: 0.05em;
+  line-height: 1;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 15px rgba(212, 160, 23, 0.2);
+}
+
+.schedule-main-title.title-white {
+  color: #FFFFFF; /* Título Próximos Jogos na cor branca */
+  text-shadow: none;
+}
+
+/* Coluna Esquerda: Horários de Treino (Sem Bordas) */
+.training-card-box {
+  background: transparent;
+  border: none; /* Retirada as bordas das informações da esquerda */
+  box-shadow: none;
+  padding: 0;
+}
+
+.training-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.8rem;
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+
+.training-subtitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 45px;
+  height: 2px;
+  background-color: var(--color-gold-main);
+}
+
+.training-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.training-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.training-header-line {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.training-day {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.training-sep {
+  color: var(--color-gold-main);
+  font-size: 0.9rem;
+}
+
+.training-hour {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-gold-main);
+  letter-spacing: 0.04em;
+}
+
+.training-place {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--color-gray-mountain);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.place-label {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+}
+
+.training-divider-line {
+  height: 1px;
+  border: none;
+  background: rgba(255, 255, 255, 0.08); /* Linha sutil sem bordas pesadas */
+  margin: 1.3rem 0;
+}
+
+/* Botão Quero Fazer Parte (Reduzido em 30%) */
+.btn-join-squad {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 70%; /* Largura reduzida em 30% */
+  margin-top: 1.8rem;
+  padding: 0.8rem 1.4rem; /* Padding reduzido em 30% */
+  background-color: var(--color-gold-main);
+  color: var(--color-black-main);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.84rem; /* Tipografia reduzida proporcionalmente */
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 16px rgba(212, 160, 23, 0.25);
+}
+
+.btn-join-squad:hover {
+  background-color: var(--color-gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(212, 160, 23, 0.45);
+}
+
+.btn-arrow-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.btn-join-squad:hover .btn-arrow-icon {
+  transform: translateX(4px);
+}
+
+/* Coluna Direita: Cards Horizontais de Jogos */
+.games-horizontal-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.game-card-horizontal {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  padding: 1.6rem 2rem;
+  background: linear-gradient(145deg, #121212 0%, #0b0b0b 100%);
+  border: 1px solid rgba(212, 160, 23, 0.28);
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.85);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.35s ease, 
+              box-shadow 0.35s ease;
+}
+
+.game-card-horizontal:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-gold-main);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.95), 0 0 20px rgba(212, 160, 23, 0.2);
+}
+
+.game-logo-box {
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 8px;
+}
+
+.game-logo-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+
+.game-content-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-grow: 1;
+}
+
+.game-championship-tag {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--color-gold-main);
+  text-transform: uppercase;
+}
+
+.game-name-title {
+  font-family: var(--font-title);
+  font-size: 1.85rem;
+  letter-spacing: 0.05em;
+  color: var(--color-white);
+  margin: 0.25rem 0 0.65rem;
+  line-height: 1.1;
+}
+
+.game-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.35rem 0.95rem;
+  background: rgba(212, 160, 23, 0.1);
+  border: 1px solid rgba(212, 160, 23, 0.35);
+  border-radius: 20px;
+}
+
+.status-indicator-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-gold-main);
+  box-shadow: 0 0 8px var(--color-gold-main);
+}
+
+.status-pill-text {
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--color-gold-main);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ========================================================
+   SEÇÃO: PATROCÍNIO (VAMOS VOAR JUNTOS?)
+   ======================================================== */
+
+.sponsorship-section {
+  width: 100%;
+  aspect-ratio: 1920 / 700; /* Ocupa 100% da largura e altura exata da imagem */
+  min-height: 520px;
+  background-image: url('assets/Background-patrocinio.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  scroll-margin-top: 80px;
+}
+
+.sponsorship-container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 4.5rem;
+  display: flex;
+  justify-content: flex-end; /* Conteúdo no terço direito aberto da arte */
+  align-items: center;
+}
+
+.sponsorship-content {
+  max-width: 580px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 1.15rem;
+  padding-top: 20px; /* Reduzido em 50px para subir o título e conteúdo */
+}
+
+.sponsorship-tagline {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300; /* Letras finas */
+  letter-spacing: 0.25em; /* Letras separadas */
+  text-transform: uppercase;
+  color: #FFFFFF; /* Em branco */
+  line-height: 1.2;
+}
+
+.sponsorship-title {
+  font-family: var(--font-title); /* Bebas Neue */
+  font-size: clamp(3rem, 5.2vw, 5rem);
+  line-height: 0.92;
+  color: var(--color-gold-main); /* Amarelo/Dourado oficial */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+  text-shadow: 0 0 30px rgba(212, 160, 23, 0.4);
+}
+
+.sponsorship-description {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #FFFFFF; /* Em branco */
+  max-width: 520px;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Botão Branco */
+.btn-sponsor-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.1rem 2.4rem;
+  background-color: #FFFFFF; /* Fundo branco */
+  color: #0A0A0A; /* Texto preto */
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 12px;
+  margin-top: 0.6rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.btn-sponsor-white:hover {
+  background-color: var(--color-gold-main);
+  color: #0A0A0A;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(212, 160, 23, 0.5);
+}
+
+.btn-sponsor-white .btn-arrow-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.btn-sponsor-white:hover .btn-arrow-icon {
+  transform: translateX(4px);
+}
+
+/* ========================================================
+   SEÇÃO: ACOMPANHE NOSSO INSTAGRAM (FUNDO #FFFCEF)
+   ======================================================== */
+
+.social-feed-section {
+  width: 100%;
+  padding: 5rem 0 2.2rem;
+  background-color: #FFFCEF;
+  color: #0A0A0A;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-feed-container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.8rem;
+}
+
+.social-feed-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.social-feed-title {
+  font-family: var(--font-title); /* Bebas Neue */
+  font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+  text-transform: uppercase;
+  color: #0A0A0A;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  margin: 0;
+}
+
+.social-feed-handle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #B8860B;
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: all 0.25s ease;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+}
+
+.social-feed-handle:hover {
+  color: #0A0A0A;
+  transform: translateY(-2px);
+  background-color: rgba(184, 134, 11, 0.12);
+}
+
+.instagram-icon-small {
+  width: 18px;
+  height: 18px;
+}
+
+/* Grid / Carrossel com 4 Posts */
+.insta-carousel-wrapper {
+  width: 100%;
+}
+
+.insta-carousel-track {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.insta-post-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(212, 160, 23, 0.35);
+  background-color: #0A0A0A;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.35s ease, 
+              border-color 0.35s ease;
+}
+
+.insta-post-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22), 0 0 18px rgba(212, 160, 23, 0.3);
+  border-color: var(--color-gold-main);
+}
+
+.insta-card-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.insta-post-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #0A0A0A;
+  gap: 0.85rem;
+  padding: 1.5rem;
+  position: relative;
+  transition: all 0.35s ease;
+}
+
+.insta-post-card:hover .insta-post-content {
+  background: #141414;
+}
+
+.insta-card-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-gold-main);
+  opacity: 0.85;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+}
+
+.insta-post-card:hover .insta-card-icon {
+  transform: translateY(-8px) scale(1.08);
+  opacity: 1;
+}
+
+.insta-post-label {
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 2.6vw, 2.5rem);
+  font-weight: 400;
+  color: #FFFFFF;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  transition: color 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.insta-post-card:hover .insta-post-label {
+  color: var(--color-gold-main);
+  transform: translateY(-5px);
+}
+
+.insta-view-label {
+  position: absolute;
+  bottom: 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-gold-main);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.insta-post-card:hover .insta-view-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Botão Seguir */
+.social-feed-footer {
+  margin-top: 0.5rem;
+}
+
+.btn-follow-insta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2.2rem;
+  background-color: #0A0A0A;
+  color: var(--color-gold-main);
+  border: 1px solid var(--color-gold-main);
+  border-radius: 12px;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-follow-insta:hover {
+  background-color: var(--color-gold-main);
+  color: #0A0A0A;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(212, 160, 23, 0.35);
+}
+
+.insta-btn-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* ========================================================
+   SEÇÃO: EMPRESAS QUE JOGAM COM A GENTE (CENTRALIZADA)
+   ======================================================== */
+
+.sponsors-showcase-section {
+  width: 100%;
+  padding: calc(1.8rem + 30px) 0 60px; /* +30px acima e 60px abaixo das marcas */
+  background-color: #FFFCEF;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.sponsors-showcase-container {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.sponsors-showcase-title {
+  font-family: var(--font-title); /* Bebas Neue */
+  font-size: clamp(2.4rem, 4.2vw, 3.6rem);
+  color: var(--color-gold-main); /* Cor dourada conforme solicitado */
+  letter-spacing: 0.05em;
+  margin: 0;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.sponsors-rows-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.sponsors-marquee-clone {
+  display: none !important;
+}
+
+.sponsors-marquee-track {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.sponsors-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem; /* Espaçamento reduzido em 50% (era 1.8rem) */
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.sponsor-brand-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  background: transparent; /* Background removido - apenas a logo em si */
+  border: none;
+  border-radius: 0;
+  min-width: 180px;
+  height: 72px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #262626;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sponsor-brand-item:hover {
+  background: transparent; /* Sem fundo ao passar o mouse */
+  border: none;
+  box-shadow: none; /* Sem caixa de sombra */
+  transform: translateY(-4px);
+  color: var(--color-gold-main);
+}
+
+.sponsor-brand-icon {
+  width: 38px; /* Logos aumentadas */
+  height: 38px;
+  color: #555555;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.sponsor-brand-item:hover .sponsor-brand-icon {
+  color: var(--color-gold-main);
+  transform: scale(1.12);
+}
+
+.sponsor-brand-name {
+  font-family: var(--font-title);
+  font-size: 2.15rem; /* Logos aumentadas */
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* ========================================================
+   RODAPÉ / SITEMAP (FUNDO BACKGROUND.JPG)
+   ======================================================== */
+
+.site-footer-section {
+  width: 100%;
+  background-image: url('assets/Background.jpg');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  padding: 5.5rem 0 1.5rem; /* Padding inferior reduzido */
+  position: relative;
+  overflow: hidden;
+  color: #FFFFFF;
+}
+
+.footer-container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: auto minmax(150px, auto) minmax(150px, auto) auto;
+  justify-content: center;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Escudo Oficial ao lado do sitemap */
+.footer-col-shield {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-shield-link {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.footer-shield-link:hover {
+  transform: scale(1.06);
+}
+
+.footer-shield-img {
+  max-height: 105px;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.7));
+}
+
+/* Sitemap Links (Colunas 1 e 2) */
+.footer-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.footer-nav-link {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #D9D9D9;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: fit-content;
+}
+
+.footer-nav-link:hover {
+  color: var(--color-gold-main);
+  transform: translateX(4px);
+}
+
+.footer-loja-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 10px;
+  background: rgba(212, 160, 23, 0.15);
+  color: var(--color-gold-main);
+  border: 1px solid rgba(212, 160, 23, 0.35);
+  text-transform: uppercase;
+}
+
+/* Coluna 3: Identidade e Apoio */
+.footer-col-brand {
+  border-left: 1px solid rgba(212, 160, 23, 0.2);
+  padding-left: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  scroll-margin-top: 100px; /* Alinhamento suave ao clicar no link de Contato */
+}
+
+.footer-brand-top-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.footer-hashtag {
+  font-family: 'Cyber Brush', cursive, sans-serif;
+  font-size: 1.45rem; /* Tamanho reduzido proporcionalmente */
+  font-weight: normal;
+  color: var(--color-gold-main); /* Cor dourada oficial #D4A017 */
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.footer-contact-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.65rem; /* Espaçamento entre Instagram e E-mail */
+}
+
+.footer-insta-handle,
+.footer-email-handle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.025em;
+  transition: all 0.25s ease;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+}
+
+.footer-insta-handle:hover,
+.footer-email-handle:hover {
+  color: var(--color-gold-main);
+  transform: translateX(4px);
+}
+
+.footer-insta-icon,
+.footer-email-icon {
+  width: 17px;
+  height: 17px;
+  color: var(--color-gold-main);
+  flex-shrink: 0;
+}
+
+/* Linha de Baixo: Apoio na frente da Logo */
+.footer-brand-row-bottom {
+  display: flex;
+  align-items: center; /* Na mesma linha horizontal */
+  gap: 1.1rem;
+}
+
+.footer-support-label {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: 0.03em;
+}
+
+.footer-logo-tremembe {
+  max-height: 44px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.8));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-logo-tremembe:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 4px 12px rgba(212, 160, 23, 0.4));
+}
+
+/* Barra Inferior de Direitos */
+.footer-bottom-bar {
+  max-width: 1300px;
+  width: 100%;
+  margin: 2rem auto 0; /* Reduzido de 4rem para diminuir o padding inferior abaixo do apoio */
+  padding: 1.2rem 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+}
+
+.footer-bottom-bar p {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+}
+
+/* Espaçador inferior (zerado) */
+.content-spacer {
+  display: none;
+}
+
+/* ========================================================
+   RESPONSIVIDADE (Tablets e Smartphones)
+   ======================================================== */
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px;
+}
+
+.mobile-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-gold-main);
+  border-radius: 1px;
+  transition: 0.3s ease;
+}
+
+@media (max-width: 1100px) {
+  .header-container {
+    padding: 0 1.25rem;
+    gap: 1rem;
+  }
+  
+  .nav-list {
+    gap: 0.6rem;
+  }
+
+  .nav-link {
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+  }
+
+  .hashtag-tagline {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+  }
+
+  .header-social-block {
+    gap: 0.85rem;
+  }
+}
+
+@media (max-width: 900px) {
+  /* Header Mobile */
+  .header-brand {
+    display: none !important; /* Oculta símbolo do carcará no mobile */
+  }
+
+  .header-container {
+    padding: 0 30px; /* Margem de 30px nas laterais */
+    justify-content: space-between;
+    position: relative; /* Base para centralização absoluta do #CarcaráDoVale */
+  }
+
+  .mobile-toggle {
+    display: flex;
+    order: 1; /* Ícone hambúrguer alinhado à esquerda */
+    margin-right: 0;
+  }
+
+  .header-social-block {
+    display: contents; /* Desacopla hashtag e ícone para centralizar no mobile */
+  }
+
+  /* #CARCARÁDOVALE exatamente ao centro entre menu hambúrguer e Instagram (em maiúsculas, fino e itálico) */
+  .hashtag-tagline {
+    display: block !important;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-style: italic; /* Em itálico */
+    text-transform: uppercase; /* Tudo em maiúsculo */
+    font-size: clamp(0.85rem, 4.2vw, 1.05rem);
+    font-weight: 400; /* Fonte mais fina */
+    letter-spacing: 0.12em;
+    color: var(--color-gold-main);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .social-links {
+    order: 2; /* Apenas ícone do Instagram à direita */
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-separator {
+    display: none;
+  }
+
+  .header-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-black-main);
+    border-bottom: 1px solid rgba(212, 160, 23, 0.3);
+    padding: 1.6rem 0;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.95);
+  }
+
+  .header-nav.active {
+    display: flex;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+    gap: 1.2rem;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0 0 0 30px; /* Padding lateral esquerdo de 30px */
+    margin: 0;
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .nav-item-tooltip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    text-align: left;
+  }
+
+  .nav-item-tooltip .nav-tooltip {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    padding: 0.2rem 0.55rem;
+    font-size: 0.65rem;
+    box-shadow: none;
+  }
+
+  .nav-item-tooltip .nav-tooltip::before {
+    display: none;
+  }
+
+  .hero-picture {
+    width: 100%;
+    display: block;
+    line-height: 0;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+    min-height: unset;
+    max-height: none;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  /* Dobra 2: Cards com margem de 30px e 20px de distância */
+  .overlap-cards-section {
+    margin-top: 0;
+    padding-bottom: 2rem;
+  }
+
+  .mobile-br {
+    display: block; /* Quebra em 2 linhas no mobile: Faça parte / da nossa equipe */
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    gap: 20px; /* Aumentado para 20px de distância entre os cards */
+    transform: translateY(-65px); /* Subiu 30px (anterior: -35px) */
+    padding: 0 30px; /* Margem de 30px nas laterais */
+  }
+
+  /* Sombra marcante de profundidade atrás do primeiro card no mobile */
+  .cards-container .premium-card:first-child {
+    box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.95), 
+                0 25px 60px rgba(0, 0, 0, 0.98), 
+                0 0 45px rgba(0, 0, 0, 0.9);
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Parceiros de Campo: Centralizado com 30px de margem lateral e padding superior reduzido em 20px */
+  .partners-section {
+    padding: calc(4rem - 20px) 0 5rem;
+  }
+
+  .partners-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 0 30px; /* Margem de 30px nas laterais */
+    text-align: center;
+    align-items: center;
+  }
+
+  .partners-text-col {
+    text-align: center;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .partners-title {
+    font-size: clamp(3.2rem, 10.5vw, 4.4rem); /* Título aumentado no mobile */
+    line-height: 0.92;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .partners-headline,
+  .partners-description {
+    text-align: center;
+  }
+
+  .partners-slider-col {
+    padding-right: 0;
+    width: 100%;
+  }
+
+  .slider-wrapper {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .slider-track {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4; /* Tamanho 3:4 no mobile conforme solicitado */
+  }
+
+  .desktop-br {
+    display: none;
+  }
+
+  .divider-feathers-img {
+    height: 280px; /* O dobro do tamanho anterior (140px -> 280px) */
+    max-height: 280px;
+    object-fit: cover;
+  }
+
+  /* Nossa História: Imagem com largura máxima e textos centralizados com 30px de margem lateral */
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+    margin: 0 auto;
+    padding: 1.5rem 0 60px; /* 60px de padding inferior abaixo de Somos o Carcará do Vale */
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .about-image-col {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+  }
+
+  .about-image-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+  }
+
+  .about-image {
+    width: 110%; /* Reduzido em 10% */
+    max-width: 110%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    transform: scale(1.1); /* Reduzido em 10% */
+    transform-origin: center center;
+  }
+
+  .about-image:hover {
+    transform: scale(1.1);
+  }
+
+  .about-text-col {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-top: -35px; /* Subir 35px o título e conteúdo conforme solicitado */
+    padding: 0 30px; /* Margem de 30px nas laterais dos conteúdos que têm texto */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+  }
+
+  .about-title {
+    padding-top: 10px;
+    text-align: center;
+  }
+
+  .about-tagline,
+  .about-description,
+  .about-description p,
+  .about-signature {
+    text-align: center;
+  }
+
+  /* Calendário 2027: Padding 60px superior e padding inferior aumentado abaixo de Próximos Jogos */
+  .schedule-section {
+    padding-top: 60px !important; /* 60px de padding superior */
+    padding-bottom: 105px !important; /* Aumentado padding abaixo de Próximos Jogos para 105px */
+  }
+
+  .schedule-container {
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    padding: 0 30px; /* Margem de 30px nas laterais */
+    text-align: center;
+    align-items: center;
+  }
+
+  .schedule-col-left {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .schedule-col-left .schedule-main-title {
+    font-size: clamp(2.8rem, 8.8vw, 3.8rem); /* Título aumentado */
+    white-space: nowrap; /* Sempre em 1 única linha */
+    text-align: center;
+    letter-spacing: 0.04em;
+    margin-bottom: 1.5rem;
+  }
+
+  .training-card-box {
+    padding: 0;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .training-subtitle {
+    text-align: center;
+  }
+
+  .training-subtitle::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .training-list {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .training-item {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .training-header-line {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .training-place {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .training-divider-line {
+    margin: 1rem auto;
+    width: 60%;
+  }
+
+  .training-time-pill {
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  /* Botão Quero Fazer Parte: 1 única linha, 100% de largura respeitando 30px lateral */
+  .btn-join-squad {
+    width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap; /* Em 1 única linha */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem auto 0;
+    padding: 1.15rem 1rem;
+    font-size: clamp(0.76rem, 3.5vw, 0.95rem);
+    letter-spacing: 0.08em;
+  }
+
+  .schedule-col-right {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 40px; /* Aumentado padding acima de Próximos Jogos em 40px */
+  }
+
+  /* Próximos Jogos: Título aumentado em 1 única linha */
+  .schedule-col-right .schedule-main-title {
+    font-size: clamp(2.8rem, 8.8vw, 3.8rem); /* Título aumentado */
+    white-space: nowrap; /* Em 1 única linha */
+    text-align: center;
+    letter-spacing: 0.04em;
+    margin-bottom: 2rem; /* Aumentado espaçamento abaixo do título */
+  }
+
+  .schedule-sub-header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .games-horizontal-stack {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  /* Centralização total dos conteúdos dos cards de próximos jogos */
+  .game-card-horizontal {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1.8rem 1.4rem;
+    gap: 1.2rem;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .game-logo-box {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .game-content-box {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .game-championship-tag {
+    text-align: center;
+  }
+
+  .game-name-title {
+    text-align: center;
+  }
+
+  .game-status-pill {
+    margin: 0.5rem auto 0;
+    justify-content: center;
+  }
+
+  .game-info-col {
+    text-align: center;
+    align-items: center;
+  }
+
+  /* Patrocínio: Imagem Mobile - Título e conteúdo subiram 50px */
+  .sponsorship-section {
+    aspect-ratio: auto;
+    min-height: 600px;
+    padding: 250px 0 5rem; /* Reduzido de 300px para 250px (subiu 50px) */
+    background-image: url('assets/background-patrocinio-mobile.jpg');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
+
+  .sponsorship-section::before {
+    display: none; /* A imagem mobile já possui transição suave para preto no fundo */
+  }
+
+  .sponsorship-container {
+    padding: 0 30px; /* Margem de 30px nas laterais */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .sponsorship-content {
+    max-width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0; /* Zerado para acompanhar a elevação */
+  }
+
+  .sponsorship-tagline,
+  .sponsorship-title,
+  .sponsorship-description {
+    text-align: center;
+  }
+
+  .btn-sponsor-white {
+    margin: 0 auto;
+  }
+
+  /* Instagram Mobile: Carrossel com 1 card e 30% do próximo slide aparecendo */
+  .social-feed-section {
+    padding: 4.5rem 0 1.2rem;
+  }
+
+  .social-feed-container {
+    padding: 0;
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+  }
+
+  .social-feed-header {
+    padding: 0 30px; /* Margem de 30px nas laterais */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .insta-carousel-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 30px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0.8rem 0 1.5rem 30px; /* Lado esquerdo com 30px, lado direito mantido vazando */
+    box-sizing: border-box;
+  }
+
+  .insta-carousel-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .insta-carousel-track {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 16px;
+    width: max-content;
+    padding-right: 30px;
+  }
+
+  .insta-post-card {
+    /* Largura configurada para 1 card inteiro + 30% do próximo card visível */
+    flex: 0 0 calc((100vw - 30px) * 0.70);
+    width: calc((100vw - 30px) * 0.70);
+    max-width: 320px;
+    aspect-ratio: 1 / 1;
+    scroll-snap-align: start;
+    border-radius: 18px;
+  }
+
+  /* Parceiros que jogam com a gente: 1 única linha com Carrossel Contínuo Infinito */
+  .sponsors-showcase-section {
+    padding: calc(1.2rem + 30px) 0 60px; /* +30px acima e 60px abaixo das marcas */
+    overflow: hidden;
+  }
+
+  .sponsors-showcase-container {
+    padding: 0;
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+  }
+
+  .sponsors-showcase-title {
+    padding: 0 30px; /* Margem de 30px nas laterais */
+    text-align: center;
+    margin-bottom: 1.2rem;
+  }
+
+  .sponsors-rows-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+
+  .sponsors-marquee-track {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.9rem; /* Espaçamento reduzido em 50% (era 1.8rem) */
+    padding-right: 0.9rem;
+    flex-shrink: 0;
+    width: max-content;
+    animation: marqueeSponsors 22s linear infinite;
+  }
+
+  .sponsors-marquee-clone {
+    display: flex !important;
+  }
+
+  .sponsors-row {
+    display: contents; /* Coloca todas as marcas em 1 única linha contínua no mobile */
+  }
+
+  .sponsor-brand-item {
+    flex-shrink: 0;
+    white-space: nowrap;
+    min-width: 175px;
+    height: 68px;
+    padding: 0.6rem 0.8rem;
+    gap: 0.8rem;
+  }
+
+  .sponsor-brand-icon {
+    width: 36px; /* Logos aumentadas no carrossel */
+    height: 36px;
+  }
+
+  .sponsor-brand-name {
+    font-size: 2.05rem; /* Logos aumentadas no carrossel */
+  }
+
+  @keyframes marqueeSponsors {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Rodapé: Centralizado com 30px nas laterais e background bg-rodape-mobile */
+  .site-footer-section {
+    padding: 4.5rem 0 1.2rem; /* Padding inferior reduzido */
+    background-image: url('assets/bg-rodape-mobile.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px; /* Margem de 30px nas laterais */
+    text-align: center;
+  }
+
+  .footer-col {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-col-shield {
+    justify-content: center;
+  }
+
+  .footer-nav-list {
+    align-items: center;
+    text-align: center;
+    gap: 1.15rem;
+  }
+
+  .footer-nav-link {
+    justify-content: center;
+    font-size: 1.15rem;
+  }
+
+  .footer-col-brand {
+    border-left: none;
+    border-top: 1px solid rgba(212, 160, 23, 0.2);
+    padding-left: 0;
+    padding-top: 2.2rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-brand-top-stack {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-contact-links {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-brand-row-bottom {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-bottom-bar {
+    margin: 1.2rem auto 0; /* Espaçamento reduzido abaixo de Apoio: Logo Tremembé */
+    padding: 1.2rem 30px 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 540px) {
+  .game-card-horizontal {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sponsor-brand-name {
+    font-size: 1.9rem;
+  }
+
+  .sponsor-brand-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-col-shield {
+    justify-content: center;
+  }
+
+  .footer-col-brand {
+    grid-column: span 1;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-brand-row-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.9rem;
+  }
+
+  .footer-brand-row-bottom {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 681px) and (max-width: 960px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cards-container article:last-child {
+    grid-column: span 2;
+  }
+}
