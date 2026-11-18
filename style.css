@@ -339,22 +339,15 @@ h1, h2, h3, h4, h5, h6, .section-title, .title-display {
   transform: translateY(-95px); /* Subiu 30px (anterior: -65px) */
 }
 
-/* Sombra profunda no primeiro card para criar profundidade sobre a primeira dobra */
-.cards-container .premium-card:first-child {
-  box-shadow: 0 -16px 45px rgba(0, 0, 0, 0.88), 
-              0 25px 60px rgba(0, 0, 0, 0.95), 
-              0 0 40px rgba(0, 0, 0, 0.8);
-  position: relative;
-  z-index: 2;
-}
-
-/* Card Individual */
+/* Card Individual - Sombra suave e elegante em todos os cards sobre a primeira dobra */
 .premium-card {
   background-color: #111111;
   border-radius: 24px; /* Bordas significativamente mais arredondadas e curvas */
   overflow: hidden;
   border: 1px solid rgba(212, 160, 23, 0.35);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.85);
+  box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.3), 
+              0 16px 38px rgba(0, 0, 0, 0.45), 
+              0 2px 10px rgba(0, 0, 0, 0.22);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
               border-color 0.35s ease, 
               box-shadow 0.35s ease;
@@ -364,7 +357,9 @@ h1, h2, h3, h4, h5, h6, .section-title, .title-display {
 .premium-card:hover {
   transform: translateY(-9px);
   border-color: var(--color-gold-hover);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.95), 0 0 25px rgba(212, 160, 23, 0.35);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.35), 
+              0 24px 48px rgba(0, 0, 0, 0.55), 
+              0 0 20px rgba(212, 160, 23, 0.25);
 }
 
 .card-inner-link {
